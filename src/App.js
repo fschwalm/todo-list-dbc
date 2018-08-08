@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+import * as TodoAPI from "./api";
 
 class App extends Component {
+  componentDidMount() {
+    TodoAPI.addTodo("ir ao churras");
+  }
+
   render() {
     return (
       <div className="App">
