@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NewTodo extends Component {
+class AddTodo extends Component {
 
     state = {
         description: ''
@@ -28,4 +28,4 @@ class NewTodo extends Component {
     }
 }
 
-export default NewTodo;
+export default AddTodo;

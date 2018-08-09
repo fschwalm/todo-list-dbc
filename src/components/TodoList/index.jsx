@@ -1,12 +1,11 @@
 import React from "react";
+import Todo from "../Todo";
 
 const TodoList = props => {
   return (
     <ul>
       {props.todos.map(todo => (
-        <li onClick={() => props.onToggleTodo(todo._id)} key={todo._id}>
-          {todo.description} <input checked={todo.done} type="checkbox" />
-        </li>
+        <Todo {...props} todo={todo} key={todo._id} />
       ))}
     </ul>
   );

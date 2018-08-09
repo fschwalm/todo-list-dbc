@@ -12,25 +12,34 @@ const addTodo = description =>
     method: "POST",
     headers,
     body: JSON.stringify({ description })
-  })
-    .then(res => res.json())
-    .then(data => data);
+  }).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error("Failed to add");
+  });
 
 const updateTodo = todo =>
   fetch(`${BASE_URL}/todos/${todo._id}`, {
     method: "PUT",
-    body: JSON.stringify(todo),
+    body: JSON.stringify({ done: !todo.done }),
     headers
-  })
-    .then(res => res.json())
-    .catch(error => error);
+  }).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error("Failed to update");
+  });
 
 const deleteTodo = todoId =>
   fetch(`${BASE_URL}/todos/${todoId}`, {
     method: "DELETE",
     headers
-  })
-    .then(res => res.json())
-    .catch(error => error);
+  }).then(response => {
+    if (response.ok) {
+      return response;
+    }
+    throw new Error("Failed to delete");
+  });
 
 export { getTodos, addTodo, updateTodo, deleteTodo };
