@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3003/api";
+const BASE_URL = "https://dojo-react-todo-api.herokuapp.com/api";
 
 const headers = {
   Accept: "application/json",

@@ -20,8 +20,8 @@ class AddTodo extends Component {
         return (
             <div>
                 <form onSubmit={this.handleAddTodo}>
-                    <input onChange={this.handleChangeDescription} type="text"/>
-                    <button type="submit">Adicionar</button>
+                    <input data-testid="todo-input" onChange={this.handleChangeDescription} type="text"/>
+                    <button data-testid="todo-button" type="submit">Adicionar</button>
                 </form>                
             </div>
         );
